@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<link rel="stylesheet" href="static/style.css">
+</head>
+
+<title>Admin Login</title>
+<div class="topnav">
+<h1>Admin Login</h1>
+  <div class="back">
+    <a href="/">
+      <img src="static/back.png" style="width:85%;height:auto;">
+    </a>
+  </div>
+</div>
+
+<body>
+<h2>
+
+<form action="#" method='POST'>
+
+<label for="name">
+Name:
+</label>
+<input type="text" class="input" name="name" maxlength="20" required
+style="width:100%;text-align:center;">
+
+<label for="pwd">
+Password:
+</label>
+<input type="password" class="input" id="pwd" name="pwd" required
+style="width:100%;text-align:center;position:center;">
+<br>
+
+{%if fail%} 
+<br>
+<p1 style="color:red;">Invalid credentials. Please try again. Attempts left: {{attempts}}</p1>
+{%endif%} 
+
+<input type="submit" class="submit" value="Submit">
+</form>
+
+</h2>
+</body>
+</html>

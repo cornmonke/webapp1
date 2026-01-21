@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<link rel="stylesheet" href="static/style.css">
+</head>
+
+<title>Review</title>
+<div class="topnav">
+<h1>Leave a review !</h1>
+  <div class="back">
+    <a href="/">
+      <img src="static/back.png" style="width:85%;height:auto;">
+    </a>
+  </div>
+</div>
+
+<body>
+<h2>
+
+<form action="#" method='POST'>
+
+<label for="name">
+Name:
+</label>
+<input type="text" class="input" name="name" maxlength="10"
+style="width:100%;text-align:center;">
+<br>
+
+<label for="rating">
+Rating (Out of 5):
+</label>
+<input type="number" class="input" min="1" max="5" step="1" name="rating" required
+style="width:100%;text-align:center;">
+<br>
+
+<label for="comments">
+Comments:
+</label>
+<input type="text" class="input" name="comments" maxlength="10"
+style="width:100%;text-align:left;">
+<br>
+
+<input type="submit" class="submit" value="Submit">
+</form>
+
+</h2>
+</body>
+</html>
