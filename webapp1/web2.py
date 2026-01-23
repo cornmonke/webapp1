@@ -14,7 +14,6 @@ login=False
 def index():
     global pagenum
     pagenum=1
-    session["attempts"]=3
     return redirect(url_for('home'))
 
 @app.route('/home')
@@ -118,12 +117,14 @@ def review():
 
 @app.route('/admin', methods=['POST','GET'])
 def admin():
-    attempts=session["attempts"]
+    attempts = session.get("attempts", 3)
     global login
+    if attempts<=0:
+        return render_template('login.html', fail=True, attempts=attempts)
     if request.method =="POST":
         if attempts<=0:
-            redirect(url_for("/home"))
-        if request.form["name"]=="admin" and request.form["pwd"]=="admin":
+            redirect(url_for("home"))
+        elif request.form["name"]=="admin" and request.form["pwd"]=="admin":
             login=True
             return render_template('admin.html')
         else:

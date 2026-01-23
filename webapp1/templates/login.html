@@ -34,10 +34,13 @@ Password:
 style="width:100%;text-align:center;position:center;">
 <br>
 
-{%if fail%} 
-<br>
+{%if fail%}
+{%if attempts >0%}
 <p1 style="color:red;">Invalid credentials. Please try again. Attempts left: {{attempts}}</p1>
-{%endif%} 
+{%else%}
+<p1 style="color:red;">No attempts left. Access denied.</p1>
+{%endif%}
+{%endif%}
 
 <input type="submit" class="submit" value="Submit">
 </form>
