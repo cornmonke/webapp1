@@ -22,25 +22,25 @@ def home():
     global pagenum
     match pagenum:
         case 1:
-            return render_template('home.html')
+            return render_template('home/home.html')
         case 2:
-            return render_template('monkey.html')
+            return render_template('home/monkey.html')
         case 3:
-            return render_template('laptop.html')
+            return render_template('home/laptop.html')
         case 4:
-            return render_template('desktop.html')
+            return render_template('home/desktop.html')
         case 5:
-            return render_template('photos.html')
+            return render_template('home/photos.html')
         case 6:
-            return render_template('earbuds.html')
+            return render_template('home/earbuds.html')
         case 7:
-            return render_template('planner.html')
+            return render_template('home/planner.html')
         case 8:
-            return render_template('watch.html')
+            return render_template('home/watch.html')
         case 9:
-            return render_template('lego.html')
+            return render_template('home/lego.html')
         case 10:
-            return render_template('ball.html')
+            return render_template('home/ball.html')
 
 @app.route('/about')
 def about():
