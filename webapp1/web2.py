@@ -8,12 +8,13 @@ app.permanent_session_lifetime = timedelta(days=1)
 pagenum=1
 rating=None
 login=False
-session["attempts"]=3
+
 
 @app.route('/')
 def index():
     global pagenum
     pagenum=1
+    session["attempts"]=3
     return redirect(url_for('home'))
 
 @app.route('/home')
@@ -127,6 +128,7 @@ def admin():
             return render_template('admin.html')
         else:
             attempts-=1
+            session["attempts"]=attempts
             return render_template('login.html', fail=True, attempts=attempts)
     elif request.method =="GET":
         return render_template('login.html',fail=False,attempts=attempts)
